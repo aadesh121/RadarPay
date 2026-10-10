@@ -11,6 +11,14 @@ _Replace the heading above with the project's name, and this line with one sente
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
 - Required env: `DATABASE_URL` — Postgres connection string
 
+## Running locally (PayRadar web app)
+
+The web app's Vite config requires two environment variables:
+
+- `PORT=18955 BASE_PATH=/ pnpm --filter @workspace/payradar run dev` — start the dashboard
+- `PORT=18955 BASE_PATH=/ pnpm --filter @workspace/payradar run build` — production build (output: `artifacts/payradar/dist/public`)
+- `PORT=8080 pnpm --filter @workspace/api-server run dev` — API server (health check: `/api/healthz`)
+
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
